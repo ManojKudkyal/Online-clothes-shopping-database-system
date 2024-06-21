@@ -17,12 +17,12 @@ MySQL Workbench
 
 # Files to Refer for Creation of Tables
 You can find the final query to create all the tables for the database with all the foreign key linkages in the folder: <br>
-Table Creation
+Table Creation <br>
 |-------> final_query.sql
 
 # Sample Entries for the Tables
 The CSV files named according to the table names of the database are in the folder "Entries for Tables" containing some sample entries for each of the tables. You can import the CSV files directly into the database: <br>
-Entries for Tables
+Entries for Tables <br>
 |-------> .csv files
 
 # ER-Diagram of the Database
