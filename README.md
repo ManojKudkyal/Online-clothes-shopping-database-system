@@ -19,5 +19,4 @@ With the rapid growth of e-commerce, having an efficient and well-structured dat
 
 # Files to refer for creation of tables
 You can find the final query to create all the tables for the database with all the foregin key linkage in the folder \ 
-Table Creation \
-\t |--->final query.sql file.
+Table Creation \    |--->final query.sql file.
