@@ -1,0 +1,112 @@
+1.User with max orders
+
+WITH UserOrderCounts AS (
+    SELECT user_id, COUNT(order_id) AS order_count,
+           RANK() OVER (ORDER BY COUNT(order_id) DESC) AS rnk
+    FROM order_details
+    GROUP BY user_id
+)
+SELECT user_id, order_count
+FROM UserOrderCounts
+WHERE rnk = 1;
+
++---------+-------------+
+| user_id | order_count |
++---------+-------------+
+| 1007    |           3 |
+| 1008    |           3 |
+| 1031    |           3 |
++---------+-------------+
+
+
+
+2.Year wise income(from orders)
+
+select year(transaction_date_time) year,sum(total_price) total_income from transaction_details group by year(transaction_date_time) order by sum(total_price) desc;
+
++------+--------------+
+| year | total_income |
++------+--------------+
+| 2018 |        78806 |
+| 2022 |        71353 |
+| 2015 |        34390 |
+| 2016 |        31838 |
+| 2019 |        25870 |
+| 2017 |        24186 |
+| 2021 |        22108 |
+| 2020 |        18838 |
++------+--------------+
+
+
+
+3.Warehouse and number of deliveries
+
+select shipping_pincode pincode,count(order_id) orders,city from user_details join order_details using(user_id) join warehouse_details on user_details.shipping_pincode=warehouse_details.pincode group by shipping_pincode,city order by count(order_id) desc;
+
++---------+--------+-------------+
+| pincode | orders | city        |
++---------+--------+-------------+
+| 411001  |      5 |  Pune       |
+| 800001  |      5 |  Patna      |
+| 600001  |      4 |  Chennai    |
+| 226001  |      3 |  Lucknow    |
+| 208001  |      3 |  Kanpur     |
+| 400001  |      2 |  Mumbai     |
+| 302001  |      2 |  Jaipur     |
+| 500001  |      2 |  Hyderabad  |
+| 248001  |      2 |  Dehradun   |
+| 342001  |      2 |  Jodhpur    |
+| 110001  |      2 |  Delhi      |
+| 380001  |      1 |  Ahmedabad  |
+| 160001  |      1 |  Chandigarh |
+| 462001  |      1 |  Bhopal     |
+| 781001  |      1 |  Guwahati   |
+| 641001  |      1 |  Coimbatore |
+| 141001  |      1 |  Ludhiana   |
+| 700001  |      1 |  Kolkata    |
+| 560001  |      1 |  Bangalore  |
++---------+--------+-------------+
+
+
+4.Product with max reating but less selling(and vise versa)
+
+ select product_id,count(rating) ratings,sum(quantity) quantities_sold from ratings_reviews join order_details on ratings_reviews.order_id=order_details.order_id group by product_id order by count(rating) desc,sum(quantity) limit 1;
+
++--------------+---------+-----------------+
+| product_id   | ratings | quantities_sold |
++--------------+---------+-----------------+
+|  DESIGNER001 |       2 |              11 |
++--------------+---------+-----------------+
+
+5.types of transaction and corresponding amount 
+
+ select transaction_type,sum(total_price) amount from transaction_details group by transaction_type order by sum(total_price) desc;
+
++------------------+--------+
+| transaction_type | amount |
++------------------+--------+
+| Credit Card      |  91213 |
+| UPI              |  70720 |
+| Net Banking      |  50106 |
+| Debit Card       |  32941 |
+| Bank Transfer    |  31590 |
+| COD              |  30819 |
++------------------+--------+
+
+
+6.product category and sell of that category
+
+select category_id,category_name,sum(quantity) quatities from product_category join product_details on product_category.category_id=product_details.product_category join order_details using(product_id) group by product_category.category_id;
+
+
++-------------+---------------+-----------+
+| category_id | category_name | quatities |
++-------------+---------------+-----------+
+| F           | Female        |        87 |
+| K           | Kids          |       111 |
+| M           | Male          |        63 |
++-------------+---------------+-----------+
+
+
+
+
