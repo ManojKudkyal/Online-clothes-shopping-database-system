@@ -29,6 +29,7 @@ Entries for tables <br>
 
 
 # ER-Diagram of the database
+After creating all the tables the ER-Diagram looks like this.
 ![Screenshot 2024-06-15 161558](https://github.com/ManojKudkyal/Online-clothes-shopping-database-system/assets/119351017/f0af8503-621e-4b2f-adae-a5e71f5236f6)
 
 
