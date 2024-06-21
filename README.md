@@ -16,19 +16,22 @@ With the rapid growth of e-commerce, having an efficient and well-structured dat
 # Platform used to the project
 MySQL Workbench
 
-# ER-Diagram of the database
-![Screenshot 2024-06-15 161558](https://github.com/ManojKudkyal/Online-clothes-shopping-database-system/assets/119351017/f0af8503-621e-4b2f-adae-a5e71f5236f6)
 
 # Files to refer for creation of tables
 You can find the final query to create all the tables for the database with all the foregin key linkage in the folder <br>
-Table Creation <br>    
-|--->final query.sql file.
+Table Creation <br>    |--->final query.sql file.
 
 # Sample entries for the table
 The csv files named according to the table names of the database are in the folder "Entries for tables" containing some sample entries for each of the table.
 You can import the csv files directly in the database. <br>
 Entries for tables <br>
 |--->.csv files
+
+
+# ER-Diagram of the database
+![Screenshot 2024-06-15 161558](https://github.com/ManojKudkyal/Online-clothes-shopping-database-system/assets/119351017/f0af8503-621e-4b2f-adae-a5e71f5236f6)
+
+
 
 
 
