@@ -18,5 +18,5 @@ With the rapid growth of e-commerce, having an efficient and well-structured dat
 ![Screenshot 2024-06-15 161558](https://github.com/ManojKudkyal/Online-clothes-shopping-database-system/assets/119351017/f0af8503-621e-4b2f-adae-a5e71f5236f6)
 
 # Files to refer for creation of tables
-You can find the final query to create all the tables for the database with all the foregin key linkage in the folder Table Creation\n
+You can find the final query to create all the tables for the database with all the foregin key linkage in the folder Table Creation \n
                                                                                                                         |--->final query.sql file.
